@@ -1,0 +1,19 @@
+/* FullTable.css */
+.fulltable-container {
+    padding: 20px;
+}
+
+.fulltable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.fulltable th, .fulltable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.fulltable th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}

@@ -1,0 +1,83 @@
+/* InsertPage.css */
+
+.insert-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+#h1, h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+}
+
+.form-container label {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.form-container input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+button {
+    padding: 10px 20px;
+   margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.button4 {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.button4:hover {
+    background-color: #45a049;
+}
+
+.button5 {
+    background-color: #007BFF;
+    color: white;
+    margin-left: 10px;
+}
+
+.button5:hover {
+    background-color: #0056b3;
+}
+
+p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+p[style*="color: red"] {
+    color: red;
+}
+
+p[style*="color: green"] {
+    color: green;
+}
