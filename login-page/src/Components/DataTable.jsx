@@ -19,18 +19,18 @@ function DataTable() {
 
     useEffect(() => {
         // Fetch distinct 'Remarks' values for the dropdown
-        fetch('http://localhost:8000/get-remarks/')
+        fetch('https://datamaze-excel.onrender.com/get-remarks/')
             .then(response => response.json())
             .then(data => setAllRemarks(data))
             .catch(error => console.error('Error fetching remarks:', error));
 
-        fetch('http://localhost:8000/get-skill/')
+        fetch('https://datamaze-excel.onrender.com/get-skill/')
             .then(response => response.json())
             .then(data => setAllSkills(data)) // Store all skills
             .catch(error => console.error('Error fetching skills:', error));
 
         // Fetch the total number of CVs (unique contacts)
-        fetch('http://localhost:8000/get-total-cv-count/')
+        fetch('https://datamaze-excel.onrender.com/get-total-cv-count/')
             .then(response => response.json())
             .then(data => setTotalCVs(data.total_cvs))
             .catch(error => console.error('Error fetching total CV count:', error));
@@ -53,7 +53,7 @@ const handleSubmit = (e) => {
     }
 
     // Make a fetch request with the prepared query params
-    fetch(`http://localhost:8000/get-filtered-data/?${queryParams.toString()}`)
+    fetch(`https://datamaze-excel.onrender.com/get-filtered-data/?${queryParams.toString()}`)
         .then(response => response.json())
         .then(data => {
             if (data.message) {
@@ -70,7 +70,7 @@ const handleSubmit = (e) => {
 };
 
 const handleViewTable = () => {
-    fetch('http://localhost:8000/get-all-data/')
+    fetch('https://datamaze-excel.onrender.com/get-all-data/')
         .then(response => response.json())
         .then(data => {
             setError(null);
@@ -84,7 +84,7 @@ const handleViewTable = () => {
 };
 
     const handleViewFullTable = () => {
-        fetch('http://localhost:8000/get-full-data/')
+        fetch('https://datamaze-excel.onrender.com/get-full-data/')
             .then(response => response.json())
             .then(data => {
                 setError(null);

@@ -65,7 +65,7 @@ export default function Upload() {
 
     useEffect(() => {
         // Fetch full table data
-        fetch('http://localhost:8000/get-full-data/')
+        fetch('https://datamaze-excel.onrender.com/get-full-data/')
             .then(response => response.json())
             .then(data => {
                 setData(data);
