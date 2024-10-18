@@ -158,3 +158,16 @@
 .tableFull td {
     background-color: #f9f9f9;
 }
+@media screen and (max-width: 768px) {
+    .button2{
+        margin-left: 73px;
+        margin-right: 25%;
+        margin-top: -140px;
+       padding-left: 35px;
+       padding-right: 35px;
+    }
+    .button3{
+        margin-left: 73px;
+    }
+    
+}
