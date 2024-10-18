@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase-config';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
@@ -65,84 +65,49 @@ export default function Create() {
         </div>
     );
 }
-    
-   /*
-import React, { useState, useEffect } from 'react';
+    */
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase-config';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
-import { getFirestore, doc, getDoc } from 'firebase/firestore'; // Firestore imports
 import './Create.css';
-
-const db = getFirestore(); // Initialize Firestore
 
 export default function Create() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [message, setMessage] = useState(''); // State to store success or error messages
     const [error, setError] = useState(null);
-    const [isAdmin, setIsAdmin] = useState(false); // State to store admin status
     const navigate = useNavigate(); // useNavigate for navigation
 
-    // Function to check if the logged-in user is an admin
-    const checkIfAdmin = async (uid) => {
-        try {
-            const userDocRef = doc(db, 'users', uid);
-            const userDoc = await getDoc(userDocRef);
-
-            if (userDoc.exists() && userDoc.data().isAdmin) {
-                setIsAdmin(true);
-            } else {
-                setIsAdmin(false);
-                setError('You are not allowed to create accounts.');
-            }
-        } catch (error) {
-            console.error('Error fetching user document:', error);
-            setError('Error checking admin status.');
-        }
-    };
-
-    // Admin account creation
     const createAccount = (e) => {
         e.preventDefault();
-        if (isAdmin) {
-            createUserWithEmailAndPassword(auth, email, password)
-                .then((userCredentials) => {
-                    console.log('Account created:', userCredentials);
-                    setError(null);
-                })
-                .catch((err) => {
-                    console.error(err);
-                    setError('Error creating account');
-                });
-        } else {
-            setError('You are not allowed to create accounts.');
-        }
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredentials) => {
+                console.log(userCredentials);
+                setError(null);
+                setMessage('Account created successfully!'); // Display success message
+            })
+            .catch((err) => {
+                console.error(err);
+                setError('Error creating account: ' + err.message); // Display detailed error message
+                setMessage(''); // Clear any previous success message
+            });
     };
 
-    // Login function
-    const loginAccount = async (e) => {
+    const loginAccount = (e) => {
         e.preventDefault();
-        try {
-            const userCredentials = await signInWithEmailAndPassword(auth, email, password);
-            console.log("User logged in:", userCredentials);
-            setError(null);
-
-            // Check if the logged-in user is an admin
-            await checkIfAdmin(userCredentials.user.uid);
-
-            navigate('/data-table'); // Navigate on successful login
-        } catch (err) {
-            console.error(err);
-            if (err.code === 'auth/invalid-email') {
-                setError('Invalid email format.');
-            } else if (err.code === 'auth/wrong-password') {
-                setError('Incorrect password.');
-            } else if (err.code === 'auth/user-not-found') {
-                setError('No user found with this email.');
-            } else {
-                setError('Login failed. Please try again.');
-            }
-        }
+        signInWithEmailAndPassword(auth, email, password)
+            .then((userCredentials) => {
+                console.log(userCredentials);
+                setError(null);
+                setMessage('Logged in successfully!'); // Display success message
+                navigate('/data-table'); // Navigate to DataTable on successful login
+            })
+            .catch((err) => {
+                console.error(err);
+                setError('Incorrect email or password: ' + err.message); // Display detailed error message
+                setMessage(''); // Clear any previous success message
+            });
     };
 
     return (
@@ -165,11 +130,13 @@ export default function Create() {
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <br />
-                {error && <p style={{ color: 'red' }}>{error}</p>} 
+
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {message && <p style={{ color: 'green' }}>{message}</p>} {/* Success message */}
+
                 <button type="submit" onClick={createAccount} className='btnname'>Create Account</button>
-                <button type="submit" onClick={loginAccount} className='btnname'>LogIn</button>
+                <button type="submit" onClick={loginAccount} className='btnname'>Log In</button>
             </form>
         </div>
     );
 }
-*/
