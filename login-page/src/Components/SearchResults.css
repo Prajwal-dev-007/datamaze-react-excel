@@ -134,15 +134,7 @@ h3 {
     background-color: #560101;
 }
 
-@media screen and (max-width: 768px) {
-   .box {
-        width: calc(50% - 20px); 
-    }
-    
-    .value-box {
-        width: calc(50% - 10px); /* Full width value box for small screens */
-    }
-}
+
 
 .value-box {
     padding: 5px;
@@ -181,13 +173,7 @@ h3 {
     background-color: #0056b3; /* Darker green on hover */
 }
 
-/* Responsive behavior */
-@media (max-width: 600px) {
-    .button-container button {
-        width: 100%; /* Full width on small screens */
-        padding: 12px; /* Adjust padding */
-    }
-}
+
 
 .cv-count{
     margin-top: -125px;
@@ -215,4 +201,33 @@ h3 {
    width: 40%;
    background-color: lightgray;
    
+}
+@media screen and (max-width: 768px) {
+    .box1, .box3 {
+        width: calc(100% - 10px); /* Full width with margins for mobile */
+        margin: 10px auto; /* Center the boxes on mobile */
+    }
+    
+    .box2, .box4, .box5 {
+        width: calc(100% - 10px); /* Full width with margins for mobile */
+        margin: 10px auto;
+    }
+
+    .value-box {
+      /*  width: calc(50% - 20px); /* Two value boxes per row */
+        margin: 2px;
+        padding: 1px;
+    }
+    .cv{
+       margin-top: -40px;
+       padding-bottom: 50px;
+    }
+    .cv-count{
+        margin-top: -60px;
+        padding: 1px;
+    }
+    .button-container button {
+        width: 100%; /* Full width button on mobile */
+        padding: 12px;
+    }
 }

@@ -135,12 +135,12 @@ h3 {
 }
 
 @media screen and (max-width: 768px) {
-    .box {
-        width: calc(100% - 20px); /* Full width for small screens */
+   .box {
+        width: calc(50% - 20px); 
     }
-
+    
     .value-box {
-        width: calc(100% - 10px); /* Full width value box for small screens */
+        width: calc(50% - 10px); /* Full width value box for small screens */
     }
 }
 
@@ -198,6 +198,11 @@ h3 {
    width: 10%;
    align-items: center;
    padding: 5px 5px 15px 15px;
+   background-color: black;
+   color: white;
+   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-size: 50%;
+   border-radius: 5px;
 }
 
 .cv{
@@ -208,5 +213,6 @@ h3 {
    border-radius: 5px;
    /*padding: 50px 100px 50px 100px;*/
    width: 40%;
+   background-color: lightgray;
    
 }
