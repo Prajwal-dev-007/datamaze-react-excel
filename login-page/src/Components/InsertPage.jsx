@@ -68,7 +68,7 @@ export default function InsertPage() {
                 />
                 <label>Date:</label>
                 <input
-                    type="text"
+                    type="date"
                     onChange={(e) => handleInputChange(e, 'date')}
                     placeholder="Enter value"
                 />
