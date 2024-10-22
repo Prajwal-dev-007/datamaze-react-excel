@@ -23,7 +23,7 @@ export default function InsertPage() {
         }, {});
 
         // Send data to backend for persistence
-        fetch('http://localhost:8000/add-row/', {
+        fetch('https://datamaze-excel.onrender.com/add-row/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
