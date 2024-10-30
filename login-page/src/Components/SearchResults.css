@@ -145,8 +145,8 @@ h3 {
 }
 
 .value-box.highlight {
-    background-color: #f0c674; /* Highlight color */
-    color: white; /* Text color for better contrast */
+    background-color:#f0c674; /* Highlight color */
+    color: rgb(12, 10, 10); /* Text color for better contrast */
     font-weight: bold; /* Bold to emphasize the selection */
 }
 
@@ -189,7 +189,7 @@ h3 {
    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
    font-size: 50%;
    border-radius: 5px;
-   overflow-y: auto; 
+   
 }
 
 .cv{
