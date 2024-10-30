@@ -49,7 +49,7 @@ export default function SearchResults() {
             .map(([key, value]) => `${key}=${encodeURIComponent(value)}`)
             .join('&');
 
-        fetch(`http://localhost:8000/get-unique-contacts-count/?${queryString}`)
+        fetch(`https://datamaze-excel.onrender.com/get-unique-contacts-count/?${queryString}`)
             .then(response => response.json())
             .then(result => {
                 if (result.error) {
